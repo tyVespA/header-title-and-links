@@ -1,0 +1,68 @@
+/* adjust values as needed */
+.header {
+  padding: 20px 40px;
+  max-width: 1100px;
+  margin-inline: auto;
+  max-height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.header ul {
+  padding-left: 0;
+  list-style-type: none;
+  display: flex;
+
+  gap: 20px;
+}
+
+/* mobile */
+
+@media screen and (max-width: 500px) {
+  .header {
+    position: relative;
+  }
+
+  .header button {
+    background-color: transparent;
+    border: transparent;
+
+    /* should be in global.css */
+    cursor: pointer;
+  }
+
+  .header svg {
+    fill: #fff;
+    transition: fill 0.3s;
+  }
+
+  .header svg:hover {
+    fill: red;
+  }
+
+  .header nav {
+  }
+
+  .header ul {
+    flex-direction: column;
+    position: absolute;
+
+    /* add overflow-x:hidden to global.css */
+    top: 20px;
+    right: -50px;
+  }
+
+  /* HELPER CLASSES */
+  .hidden {
+    display: none;
+  }
+}
