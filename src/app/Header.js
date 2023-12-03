@@ -2,21 +2,28 @@
 import React from "react";
 import styles from "./Header.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Header() {
   const [menuOpened, setMenuOpened] = useState(false);
-  console.log(menuOpened);
+  const [scrollingEnabled, setScrollingEnabled] = useState(true);
+
+  useEffect(() => {
+    if (!scrollingEnabled) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [scrollingEnabled]);
 
   function handleClick() {
     setMenuOpened(!menuOpened);
+    setScrollingEnabled(!scrollingEnabled);
+
     // can add an overlay div that makes page darker when menu is open
     // const [overlay, setOverlay] = useState(false)
     // setOverlay(!overlay)
-    if (menuOpened) {
-      window;
-    }
-    console.log(menuOpened);
   }
 
   return (
