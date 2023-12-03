@@ -50,19 +50,37 @@
   }
 
   .header nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    position: absolute;
+    /* adjust values based on project */
+    top: 80px;
+    right: 50px;
+    text-align: end;
+
+    transition: all 0.3s;
+
+    /* add overflow-x:hidden to global.css */
   }
 
   .header ul {
     flex-direction: column;
-    position: absolute;
-
-    /* add overflow-x:hidden to global.css */
-    top: 20px;
-    right: -50px;
   }
 
   /* HELPER CLASSES */
   .hidden {
     display: none;
+  }
+
+  .offScreen {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+
+  .onScreen {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
