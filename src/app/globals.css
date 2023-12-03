@@ -50,3 +50,7 @@ h6 {
   background-color: #1f1f1f;
   font-size: 1.1rem;
 }
+
+body {
+  overflow-x: hidden;
+}
